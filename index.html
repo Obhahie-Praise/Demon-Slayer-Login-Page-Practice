@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demon Slayer Fan Club</title>
+    <link rel="stylesheet" href="./styles/app.css">
+    <link rel="stylesheet" href="./styles/queries.css">
+
+</head>
+<body>
+    <h1>
+        <img src="./images/demon_slayer-removebg-preview.png" alt="Demon Slayer">
+    </h1>
+    <main>
+        <div class="login-container">
+            <h2>⚔️ LOGIN</h2>
+            <p>Welcome back. Ready to start slaying demons</p>
+            <div class="enter-login-creditials" id="login-info">
+                <div class="enter-username">
+                    <label for="user" id="login-label">Username</label>
+                    <input id="login-input"type="text"autocomplete="on" placeholder="Enter User Name" required>
+                </div>
+                <div class="enter-password">
+                    <label for="password" id="login-label">Password</label>
+                    <input id="login-input" type="password" placeholder="Enter Password" required>
+                </div>
+            </div>
+            <div class="function-fallback">
+                <div class="checkbox">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+                |
+                <div class="forgot-password">
+                    <a href="#">Forgot Password</a>
+                </div>
+            </div>
+            <div class="login-button">
+                <button id="login-button" type="submit" formaction="index.html">Login</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

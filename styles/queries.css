@@ -1,0 +1,74 @@
+@media (max-width: 1440px) {
+    h1 img {
+        width: 10%;
+        height: 10%;
+    }
+
+    .login-container {
+        transform: scale(0.8);
+    }
+
+    .login-container:hover {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 1024px) {
+    h1 img {
+        height: 12%;
+        width: 12%;
+    }
+
+    .login-container {
+        transform: scale(0.7);
+    }
+
+    .login-container:hover {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 img {
+        height: 13%;
+        width: 13%;
+    }
+
+    .login-container {
+        transform: scale(0.7);
+    }
+
+    .login-container:hover {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 425px) {
+    h1 img {
+        height: 17%;
+        width: 17%;
+    }
+
+    .login-container {
+       transform: scale(0.4);
+    }
+
+    .login-container:hover {
+         transform: scaleX(0.52) scaleY(0.58);
+    }
+}
+
+@media (max-width: 320px) {
+    h1 img {
+        height: 25%;
+        width: 25%;
+    }
+
+    .login-container {
+        transform: scale(0.4);
+    }
+
+    .login-container:hover {
+        transform: scale(0.48, 0.5);
+    }
+}

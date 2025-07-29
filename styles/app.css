@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    height: 100vh;
+    background-image: url(../images/wallpaperflare.com_wallpaper\ \(1\).jpg);
+    background-size: auto;
+
+    animation: body-blur-in 1s ease-out 1 ;
+}
+
+@keyframes body-blur-in {
+    from {
+        filter: blur(5px);
+    }
+
+    to {
+        filter: none;
+    }
+}
+
+
+
+main {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    top: 0;
+    left: 0;
+    padding-left: 1rem;
+
+    animation: h1-animation 1s ease-out 1;
+}
+
+h1 img {
+    height: 8%;
+    width: 8%;
+    opacity: 2;
+}
+
+@keyframes h1-animation {
+    from {
+        transform: translateX(-50px);
+        opacity: 0.2;
+    }
+
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+.login-container {
+    display: flex;
+    height: 500px;
+    width: 700px;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border: 2px solid white;
+    border-radius: 8px;
+    box-shadow: 2px 5px 20px white;
+    backdrop-filter: blur(7px);
+
+    animation: login-container-animation 1s ease-in-out 1;
+}
+
+@keyframes login-container-animation {
+    from {
+        transform: translateY(100px);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.enter-username,
+.enter-password {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1rem;
+}
+
+.enter-username {
+    margin-top: 2rem;
+}
+
+#login-label {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#login-input {
+    background: none;
+    font-size: 1.2rem;
+    color: #ffffffa5;
+    width: 27rem;
+    height: 2.5rem;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 8px;
+}
+
+#login-input::placeholder,
+#login-input::placeholder {
+    font-size: 1.2rem;
+    padding: 10px 5px;
+    color: #ffffffa5;
+}
+
+.function-fallback {
+    display: flex;
+    gap: 1.7rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+.function-fallback a {
+    color: white;
+    text-decoration: none;
+}
+
+.function-fallback a:hover {
+    text-decoration: underline;
+}
+
+#login-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #ff000067;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    height: 3rem;
+    width: 15rem;
+}
+
+#login-button:hover,
+#login-button:focus {
+    background-color: #ff0000;
+    transform: scale(1.05);
+    transition: all 0.2s;
+}
+
+.login-container:hover,
+.login-container:focus {
+    transform: scale(1.01);
+    transition: all 0.2s;
+}
+
+#login-input:hover,
+#login-input:focus {
+    transform: scale(1.02);
+    transition: all 0.2s;
+}
+
+#login-input:active {
+ transform: scale(1.01);
+}
