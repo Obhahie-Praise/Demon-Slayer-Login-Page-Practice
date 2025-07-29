@@ -9,7 +9,7 @@ body {
     color: white;
     height: 100vh;
     background-image: url(../images/wallpaperflare.com_wallpaper\ \(1\).jpg);
-    background-size: auto;
+    background-size: cover;
 
     animation: body-blur-in 1s ease-out 1 ;
 }
@@ -42,8 +42,8 @@ h1 {
 }
 
 h1 img {
-    height: 8%;
-    width: 8%;
+    height: 10%;
+    width: 10%;
     opacity: 2;
 }
 
@@ -61,8 +61,8 @@ h1 img {
 
 .login-container {
     display: flex;
-    height: 500px;
-    width: 700px;
+    height: 600px;
+    width: 800px;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
@@ -72,6 +72,10 @@ h1 img {
     backdrop-filter: blur(7px);
 
     animation: login-container-animation 1s ease-in-out 1;
+}
+
+.login-caption {
+    padding-top: 2rem;
 }
 
 @keyframes login-container-animation {
@@ -176,3 +180,4 @@ h2 {
 #login-input:active {
  transform: scale(1.01);
 }
+
