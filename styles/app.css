@@ -1,211 +1,225 @@
-@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Share+Tech&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Share+Tech&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    height: 100vh;
-    background-image: url(../images/wallpaperflare.com_wallpaper\ \(1\).jpg);
-    background-size: cover;
+  font-family: "Share Tech", sans-serif;
+  color: white;
+  height: 100vh;
+  background-image: url(../images/wallpaperflare.com_wallpaper\ \(1\).jpg);
+  background-size: cover;
 
-    animation: body-blur-in 1s ease-out 1 ;
+  animation: body-blur-in 1s ease-out 1;
 }
 
 @keyframes body-blur-in {
-    from {
-        filter: blur(5px);
-    }
+  from {
+    filter: blur(5px);
+  }
 
-    to {
-        filter: none;
-    }
+  to {
+    filter: none;
+  }
 }
 
-
-
 main {
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
-    top: 0;
-    left: 0;
-    padding-left: 1rem;
+  position: relative;
+  top: 0;
+  left: 0;
 
-    animation: h1-animation 1s ease-out 1;
+  animation: h1-animation 1s ease-out 1;
 }
 
 h1 img {
-    height: 10%;
-    width: 10%;
-    opacity: 2;
+  height: 10%;
+  width: 10%;
+  opacity: 1;
 }
 
 @keyframes h1-animation {
-    from {
-        transform: translateX(-50px);
-        opacity: 0.2;
-    }
+  from {
+    transform: translateX(-50px);
+    opacity: 0.2;
+  }
 
-    to {
-        transform: translate(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .login-container {
-    display: flex;
-    max-width: 800px;
-    max-height: 600px;
-    height: 600px;
-    width: 800px;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    font-family: "Share Tech", sans-serif;
-    border: 2px solid white;
-    border-radius: 8px;
-    box-shadow: 2px 5px 20px white;
-    backdrop-filter: blur(7px);
+  display: flex;
+  max-width: 800px;
+  max-height: 600px;
+  height: 600px;
+  width: 800px;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: "Share Tech", sans-serif;
+  border: 2px solid white;
+  border-radius: 8px;
+  box-shadow: 2px 5px 20px white;
+  backdrop-filter: blur(7px);
 
-    animation: login-container-animation 1s ease-in-out 1;
+  animation: login-container-animation 1s ease-in-out 1;
 }
 
 .login-container h2,
 footer {
-    font-family: "Share Tech", sans-serif;
+  font-family: "Share Tech", sans-serif;
 }
 
 .login-caption {
-    padding-top: 2rem;
+  padding-top: 2rem;
 }
 
 @keyframes login-container-animation {
-    from {
-        transform: translateY(100px);
-        opacity: 0.5;
-    }
+  from {
+    transform: translateY(100px);
+    opacity: 0.5;
+  }
 
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 h2 {
-    font-size: 2rem;
-    font-weight: 600;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .enter-username,
 .enter-password {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 1rem;
 }
 
 .enter-username {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 #login-label {
-    font-size: 1.5rem;
-    font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 #login-input {
-    background: none;
-    font-size: 1.2rem;
-    color: #ffffffa5;
-    width: 27rem;
-    height: 2.5rem;
-    border: 2px solid white;
-    outline: none;
-    border-radius: 8px;
+  background: none;
+  font-size: 1.2rem;
+  color: #ffffffa5;
+  width: 27rem;
+  height: 2.5rem;
+  border: 2px solid white;
+  outline: none;
+  border-radius: 8px;
 }
 
 #login-input::placeholder {
-    font-family: "Shared Tech", sans-serif;
-    font-size: 1.2rem;
-    padding: 10px 5px;
-    color: #ffffffa5;
+  font-family: "Share Tech", sans-serif;
+  font-size: 1.2rem;
+  padding: 10px 5px;
+  color: #ffffffa5;
+}
+
+#login-input {
+  padding-left: 1rem;
 }
 
 .function-fallback {
-    display: flex;
-    gap: 1.2rem;
-    padding: 2rem;
-    font-size: 1rem;
+  display: flex;
+  gap: 1.2rem;
+  padding: 2rem;
+  font-size: 1rem;
 }
 
 .function-fallback a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .function-fallback a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #login-button {
-    font-size: 1.5rem;
-    font-weight: bold;
-    background-color: #ff000067;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    height: 3rem;
-    width: 15rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #ff000067;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  height: 3rem;
+  width: 15rem;
 }
 
 #login-button:hover,
 #login-button:focus {
-    background-color: #ff0000;
-    transform: scale(1.05);
-    transition: all 0.2s;
+  background-color: #ff0000;
+  transform: scale(1.05);
+  transition: all 0.2s;
 }
 
 .login-container:hover,
 .login-container:focus {
-    transform: scale(1.07);
-    transition: all 0.2s;
+  transform: scale(1.07);
+  transition: all 0.2s;
 }
 
 #login-input:hover,
 #login-input:focus {
-    transform: scale(1.02);
-    transition: all 0.2s;
+  transform: scale(1.02);
+  transition: all 0.2s;
 }
 
 #login-input:active {
- transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 .git-hub-repo {
-    font-size: 1rem;
-    padding: 2rem;
+  font-size: 1rem;
+  padding: 2rem;
 }
 
 .git-hub-repo a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .git-hub-repo a:hover {
-    text-decoration: under;
+  text-decoration: underline;
 }
 
 footer {
-    display: flex;
-    justify-content: center;    
+  display: flex;
+  justify-content: center;
+  animation: footer-blur-in 2s 1 ease-in-out;
 }
+
+@keyframes footer-blur-in {
+  from {
+    filter: blur(10px);
+  }
+
+  to {
+    filter: blur(0px);
+  }
+}
+
