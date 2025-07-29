@@ -17,6 +17,10 @@
     font-size: 0.8rem;
     padding-bottom: 4rem;
   }
+
+  footer {
+    margin-top: 6rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -31,6 +35,10 @@
 
   .login-container:hover {
     transform: scale(1);
+  }
+
+  footer {
+    margin-top: 7rem;
   }
 }
 
@@ -47,6 +55,10 @@
   .login-container:hover {
     transform: scale(0.8);
   }
+
+  footer {
+    margin-top: 9rem;
+  }
 }
 
 @media (max-width: 426px) {
@@ -61,6 +73,10 @@
 
   .login-container:hover {
     transform: scale(0.68, 0.75);
+  }
+
+  footer {
+    margin-top: 10rem;
   }
 }
 

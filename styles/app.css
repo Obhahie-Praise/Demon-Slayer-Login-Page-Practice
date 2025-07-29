@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Share+Tech&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +29,7 @@ body {
 
 
 main {
-    height: 75vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,12 +70,18 @@ h1 img {
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+    font-family: "Share Tech", sans-serif;
     border: 2px solid white;
     border-radius: 8px;
     box-shadow: 2px 5px 20px white;
     backdrop-filter: blur(7px);
 
     animation: login-container-animation 1s ease-in-out 1;
+}
+
+.login-container h2,
+footer {
+    font-family: "Share Tech", sans-serif;
 }
 
 .login-caption {
@@ -125,8 +133,8 @@ h2 {
     border-radius: 8px;
 }
 
-#login-input::placeholder,
 #login-input::placeholder {
+    font-family: "Shared Tech", sans-serif;
     font-size: 1.2rem;
     padding: 10px 5px;
     color: #ffffffa5;
@@ -195,4 +203,9 @@ h2 {
 
 .git-hub-repo a:hover {
     text-decoration: under;
+}
+
+footer {
+    display: flex;
+    justify-content: center;    
 }
