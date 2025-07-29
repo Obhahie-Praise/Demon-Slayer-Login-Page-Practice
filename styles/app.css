@@ -132,9 +132,9 @@ h2 {
 
 .function-fallback {
     display: flex;
-    gap: 1.7rem;
+    gap: 1.2rem;
     padding: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .function-fallback a {
@@ -181,3 +181,16 @@ h2 {
  transform: scale(1.01);
 }
 
+.git-hub-repo {
+    font-size: 1rem;
+    padding: 2rem;
+}
+
+.git-hub-repo a {
+    color: white;
+    text-decoration: none;
+}
+
+.git-hub-repo a:hover {
+    text-decoration: under;
+}
