@@ -61,6 +61,8 @@ h1 img {
 
 .login-container {
     display: flex;
+    max-width: 800px;
+    max-height: 600px;
     height: 600px;
     width: 800px;
     flex-direction: column;
@@ -167,7 +169,7 @@ h2 {
 
 .login-container:hover,
 .login-container:focus {
-    transform: scale(1.01);
+    transform: scale(1.07);
     transition: all 0.2s;
 }
 
