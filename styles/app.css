@@ -1,5 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Share+Tech&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,100..900&family=Share+Tech&display=swap");
 
+/* ===== CSS VARIABLES FOR EASY THEMING ===== */
+:root {
+  --primary-color: #ffffff;
+  --text-muted: #ffffffa5;
+  --accent-color: #ff0000;
+  --accent-light: #ff000067;
+  --border-color: #ffffff;
+  --shadow-color: #ffffff;
+  --backdrop-blur: blur(7px);
+  --transition-speed: 0.3s;
+  --border-radius: 8px;
+  --success-color: #00ff00;
+  --warning-color: #ffaa00;
+}
+
+/* ===== RESET & BASE STYLES ===== */
 * {
   margin: 0;
   padding: 0;
@@ -8,218 +24,343 @@
 
 body {
   font-family: "Share Tech", sans-serif;
-  color: white;
-  height: 100vh;
-  background-image: url(../images/wallpaperflare.com_wallpaper\ \(1\).jpg);
-  background-size: cover;
-
-  animation: body-blur-in 1s ease-out 1;
+  color: var(--primary-color);
+  min-height: 100vh;
+  background: url("../images/wallpaperflare.com_wallpaper (1).jpg") center/cover no-repeat fixed;
+  animation: body-blur-in 1s ease-out;
+  overflow-x: hidden;
 }
 
 @keyframes body-blur-in {
-  from {
-    filter: blur(5px);
-  }
+  from { filter: blur(5px); }
+  to { filter: none; }
+}
 
-  to {
-    filter: none;
+/* ===== HEADER & LOGO ===== */
+.site-header {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.logo {
+  animation: logo-slide-in 1s ease-out;
+}
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+  opacity: 1;
+  transition: transform var(--transition-speed);
+}
+
+@keyframes logo-slide-in {
+  from { 
+    transform: translateX(-50px); 
+    opacity: 0.2; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
   }
 }
 
-main {
-  height: 70vh;
+/* ===== MAIN LAYOUT ===== */
+.main-content {
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-h1 {
-  position: relative;
-  top: 0;
-  left: 0;
-
-  animation: h1-animation 1s ease-out 1;
-}
-
-h1 img {
-  height: 10%;
-  width: 10%;
-  opacity: 1;
-}
-
-@keyframes h1-animation {
-  from {
-    transform: translateX(-50px);
-    opacity: 0.2;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.login-container {
-  display: flex;
-  max-width: 800px;
-  max-height: 600px;
-  height: 600px;
-  width: 800px;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  font-family: "Share Tech", sans-serif;
-  border: 2px solid white;
-  border-radius: 8px;
-  box-shadow: 2px 5px 20px white;
-  backdrop-filter: blur(7px);
-
-  animation: login-container-animation 1s ease-in-out 1;
-}
-
-.login-container h2,
-footer {
-  font-family: "Share Tech", sans-serif;
-}
-
-.login-caption {
-  padding-top: 2rem;
-}
-
-@keyframes login-container-animation {
-  from {
-    transform: translateY(100px);
-    opacity: 0.5;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.enter-username,
-.enter-password {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
   padding: 1rem;
 }
 
-.enter-username {
-  margin-top: 2rem;
+/* ===== LOGIN CONTAINER ===== */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(90%, 800px);
+  max-width: 800px;
+  padding: 2rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 2px 5px 20px var(--shadow-color);
+  backdrop-filter: var(--backdrop-blur);
+  animation: container-slide-up 1s ease-in-out;
+  transition: transform var(--transition-speed);
 }
 
-#login-label {
-  font-size: 1.5rem;
+@keyframes container-slide-up {
+  from { 
+    transform: translateY(100px); 
+    opacity: 0.5; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+/* ===== LOGIN HEADER ===== */
+.login-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.login-caption {
+  padding: 1rem 0 2rem;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ===== FORM STYLES ===== */
+.login-form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.credentials-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-size: 1.4rem;
   font-weight: 500;
+  color: var(--primary-color);
 }
 
-#login-input {
-  background: none;
-  font-size: 1.2rem;
-  color: #ffffffa5;
-  width: 27rem;
-  height: 2.5rem;
-  border: 2px solid white;
-  outline: none;
-  border-radius: 8px;
-}
-
-#login-input::placeholder {
+.form-input {
+  background: transparent;
   font-family: "Share Tech", sans-serif;
   font-size: 1.2rem;
-  padding: 10px 5px;
-  color: #ffffffa5;
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  width: 100%;
+  height: 2.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  outline: none;
+  transition: all var(--transition-speed);
 }
 
-#login-input {
-  padding-left: 1rem;
+.form-input::placeholder {
+  color: var(--text-muted);
+  font-family: "Share Tech", sans-serif;
 }
 
-.function-fallback {
+.form-input:hover,
+.form-input:focus {
+  border-color: var(--accent-light);
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.form-input.error {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+/* ===== PASSWORD INPUT CONTAINER ===== */
+.password-input-container {
+  position: relative;
   display: flex;
-  gap: 1.2rem;
-  padding: 2rem;
+  align-items: center;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
   font-size: 1rem;
+  transition: color var(--transition-speed);
 }
 
-.function-fallback a {
-  color: white;
+.password-toggle:hover,
+.password-toggle:focus {
+  color: var(--primary-color);
+  outline: 1px solid var(--accent-color);
+  border-radius: 3px;
+}
+
+/* ===== ERROR & SUCCESS MESSAGES ===== */
+.error-message {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  min-height: 1.2rem;
+  display: block;
+}
+
+.success-message {
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid var(--success-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+  color: var(--success-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* ===== FORM OPTIONS ===== */
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  flex-wrap: wrap;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox-input {
+  accent-color: var(--accent-color);
+}
+
+.divider {
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.forgot-password-link {
+  color: var(--primary-color);
   text-decoration: none;
+  transition: color var(--transition-speed);
 }
 
-.function-fallback a:hover {
+.forgot-password-link:hover,
+.forgot-password-link:focus {
+  color: var(--accent-color);
   text-decoration: underline;
 }
 
-#login-button {
-  font-size: 1.5rem;
+/* ===== LOGIN BUTTON ===== */
+.form-actions {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.login-button {
+  font-family: "Share Tech", sans-serif;
+  font-size: 1.4rem;
   font-weight: bold;
-  background-color: #ff000067;
-  color: white;
+  background-color: var(--accent-light);
+  color: var(--primary-color);
   border: none;
   border-radius: 10px;
-  outline: none;
-  height: 3rem;
-  width: 15rem;
+  padding: 0.8rem 2rem;
+  min-height: 3rem;
+  min-width: 200px;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-#login-button:hover,
-#login-button:focus {
-  background-color: #ff0000;
+.login-button:hover,
+.login-button:focus {
+  background-color: var(--accent-color);
   transform: scale(1.05);
-  transition: all 0.2s;
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
 }
 
-.login-container:hover,
-.login-container:focus {
-  transform: scale(1.07);
-  transition: all 0.2s;
+.login-button:active {
+  transform: scale(0.98);
 }
 
-#login-input:hover,
-#login-input:focus {
-  transform: scale(1.02);
-  transition: all 0.2s;
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
-#login-input:active {
-  transform: scale(1.01);
+.loading-spinner {
+  animation: spin 1s linear infinite;
 }
 
-.git-hub-repo {
-  font-size: 1rem;
-  padding: 2rem;
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.git-hub-repo a {
-  color: white;
+/* ===== GITHUB LINK ===== */
+.login-footer {
+  margin-top: 1.5rem;
+}
+
+.github-link {
+  color: var(--primary-color);
   text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-speed);
 }
 
-.git-hub-repo a:hover {
+.github-link:hover,
+.github-link:focus {
+  color: var(--accent-color);
   text-decoration: underline;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  animation: footer-blur-in 2s 1 ease-in-out;
+/* ===== SITE FOOTER ===== */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  animation: footer-fade-in 2s ease-in-out;
 }
 
-@keyframes footer-blur-in {
-  from {
-    filter: blur(10px);
+@keyframes footer-fade-in {
+  from { 
+    filter: blur(10px); 
+    opacity: 0; 
   }
-
-  to {
-    filter: blur(0px);
+  to { 
+    filter: blur(0); 
+    opacity: 1; 
   }
 }
 
+/* ===== FOCUS STYLES FOR ACCESSIBILITY ===== */
+*:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}

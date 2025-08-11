@@ -1,52 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demon Slayer Practice Login Page</title>
-    <link rel="icon" href="./images/demon_slayer-removebg-preview.png">
-    <link rel="stylesheet" href="./styles/app.css">
-    <link rel="stylesheet" href="./styles/queries.css">
+    <meta
+      name="description"
+      content="A Demon Slayer themed login page practice project"
+    />
+    <link rel="icon" href="./images/demon_slayer-removebg-preview.png" />
+    <link rel="stylesheet" href="./styles/app.css" />
+    <link rel="stylesheet" href="./styles/queries.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="logo" aria-label="Demon Slayer Login">
+        <img
+          src="./images/demon_slayer-removebg-preview.png"
+          alt="Demon Slayer Logo"
+          loading="lazy"
+          width="100"
+          height="100"
+        />
+      </h1>
+    </header>
 
-</head>
-<body>
-    <h1>
-        <img src="./images/demon_slayer-removebg-preview.png" alt="Demon Slayer">
-    </h1>
-    <main>
-        <div class="login-container">
-            <h2>⚔️ LOGIN</h2>
-            <p class="login-caption">“A Hashira never hesitates. Neither should you 🔥.”</p>
-            <div class="enter-login-creditials" id="login-info">
-                <div class="enter-username">
-                    <label for="user" id="login-label">Username</label>
-                    <input id="login-input"type="text"autocomplete="on" placeholder="Enter User Name" required>
-                </div>
-                <div class="enter-password">
-                    <label for="password" id="login-label">Password</label>
-                    <input id="login-input" type="password" placeholder="Enter Password" required>
-                </div>
+    <main class="main-content">
+      <section class="login-container" role="main">
+        <header class="login-header">
+          <h2>⚔️ LOGIN</h2>
+          <p class="login-caption">
+            "A Hashira never hesitates. Neither should you 🔥."
+          </p>
+        </header>
+
+        <!-- Fixed form action and method for better functionality -->
+        <form
+          class="login-form"
+          action="#"
+          method="POST"
+          novalidate
+          id="loginForm"
+        >
+          <fieldset class="credentials-fieldset">
+            <legend class="sr-only">Login Credentials</legend>
+
+            <div class="form-group">
+              <label for="username" class="form-label">Username</label>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                class="form-input"
+                autocomplete="username"
+                placeholder="Enter Username"
+                required
+                aria-describedby="username-error"
+                minlength="3"
+                maxlength="20"
+              />
+              <span
+                id="username-error"
+                class="error-message"
+                role="alert"
+                aria-live="polite"
+              ></span>
             </div>
-            <div class="function-fallback">
-                <div class="checkbox">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Remember Me</label>
-                </div>
-                |
-                <div class="forgot-password">
-                    <a href="#">Forgot Password</a>
-                </div>
+
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <div class="password-input-container">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  class="form-input"
+                  autocomplete="current-password"
+                  placeholder="Enter Password"
+                  required
+                  aria-describedby="password-error"
+                  minlength="6"
+                  maxlength="50"
+                />
+                <button
+                  type="button"
+                  class="password-toggle"
+                  aria-label="Toggle password visibility"
+                  tabindex="0"
+                  id="passwordToggle"
+                >
+                  <span class="toggle-icon" aria-hidden="true">👁️</span>
+                </button>
+              </div>
+              <span
+                id="password-error"
+                class="error-message"
+                role="alert"
+                aria-live="polite"
+              ></span>
             </div>
-            <div class="login-button">
-                <button id="login-button" type="submit" formaction="index.html">Login</button>
-            </div>
-            <div class="git-hub-repo">
-                <a href="https://github.com/Obhahie-Praise/Demon-Slayer-Login-Page-Practice.git">My Git-hub Repo</a>
-            </div>
-        </div>
+          </fieldset>
+
+          <div class="form-options">
+            <label class="checkbox-container">
+              <input
+                type="checkbox"
+                id="remember"
+                name="remember"
+                class="checkbox-input"
+                value="1"
+              />
+              <span class="checkbox-label">Remember Me</span>
+            </label>
+
+            <span class="divider" aria-hidden="true">|</span>
+
+            <a
+              href="#"
+              class="forgot-password-link"
+              tabindex="0"
+              role="button"
+              aria-label="Reset password"
+            >
+              Forgot Password?
+            </a>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="login-button" id="submitButton">
+              <span class="button-text">Login</span>
+              <span class="button-icon" aria-hidden="true">⚔️</span>
+              <span
+                class="loading-spinner"
+                aria-hidden="true"
+                style="display: none"
+                >⏳</span
+              >
+            </button>
+          </div>
+
+          <!-- Success message container -->
+          <div
+            id="success-message"
+            class="success-message"
+            role="alert"
+            aria-live="polite"
+            style="display: none"
+          >
+            <span class="success-icon" aria-hidden="true">✅</span>
+            <span class="success-text">Login successful! Redirecting...</span>
+          </div>
+        </form>
+
+        <footer class="login-footer">
+          <a
+            href="https://github.com/Obhahie-Praise/Demon-Slayer-Login-Page-Practice"
+            class="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View source code on GitHub (opens in new tab)"
+          >
+            <span class="github-icon" aria-hidden="true">📂</span>
+            My GitHub Repo
+          </a>
+        </footer>
+      </section>
     </main>
-    <footer>
-        <p>Copyright &copy; 2025 Obhahie Praise</p>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Obhahie Praise. All rights reserved.</p>
     </footer>
-</body>
+
+    <!-- Enhanced JavaScript with better validation and UX -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("loginForm");
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const submitButton = document.getElementById("submitButton");
+        const passwordToggle = document.getElementById("passwordToggle");
+        const successMessage = document.getElementById("success-message");
+
+        // Password visibility toggle
+        passwordToggle.addEventListener("click", function () {
+          const isPassword = passwordInput.type === "password";
+          passwordInput.type = isPassword ? "text" : "password";
+
+          const toggleIcon = passwordToggle.querySelector(".toggle-icon");
+          toggleIcon.textContent = isPassword ? "🙈" : "👁️";
+
+          passwordToggle.setAttribute(
+            "aria-label",
+            isPassword ? "Hide password" : "Show password"
+          );
+        });
+
+        // Real-time validation
+        usernameInput.addEventListener("input", function () {
+          validateUsername();
+        });
+
+        passwordInput.addEventListener("input", function () {
+          validatePassword();
+        });
+
+        // Form submission
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const isUsernameValid = validateUsername();
+          const isPasswordValid = validatePassword();
+
+          if (isUsernameValid && isPasswordValid) {
+            handleSuccessfulLogin();
+          }
+        });
+
+        // Validation functions
+        function validateUsername() {
+          const username = usernameInput.value.trim();
+
+          if (username === "") {
+            showError("username-error", "Username is required");
+            return false;
+          } else if (username.length < 3) {
+            showError(
+              "username-error",
+              "Username must be at least 3 characters"
+            );
+            return false;
+          } else if (username.length > 20) {
+            showError(
+              "username-error",
+              "Username must be less than 20 characters"
+            );
+            return false;
+          } else if (!/^[a-zA-Z0-9_-]+$/.test(username)) {
+            showError(
+              "username-error",
+              "Username can only contain letters, numbers, hyphens, and underscores"
+            );
+            return false;
+          } else {
+            clearError("username-error");
+            return true;
+          }
+        }
+
+        function validatePassword() {
+          const password = passwordInput.value;
+
+          if (password === "") {
+            showError("password-error", "Password is required");
+            return false;
+          } else if (password.length < 6) {
+            showError(
+              "password-error",
+              "Password must be at least 6 characters"
+            );
+            return false;
+          } else if (password.length > 50) {
+            showError(
+              "password-error",
+              "Password must be less than 50 characters"
+            );
+            return false;
+          } else if (!/(?=.*[a-zA-Z])/.test(password)) {
+            showError(
+              "password-error",
+              "Password must contain at least one letter"
+            );
+            return false;
+          } else {
+            clearError("password-error");
+            return true;
+          }
+        }
+
+        function showError(errorId, message) {
+          const errorElement = document.getElementById(errorId);
+          errorElement.textContent = message;
+          errorElement.style.display = "block";
+
+          // Add error styling to input
+          const inputId = errorId.replace("-error", "");
+          const inputElement = document.getElementById(inputId);
+          inputElement.classList.add("error");
+        }
+
+        function clearError(errorId) {
+          const errorElement = document.getElementById(errorId);
+          errorElement.textContent = "";
+          errorElement.style.display = "none";
+
+          // Remove error styling from input
+          const inputId = errorId.replace("-error", "");
+          const inputElement = document.getElementById(inputId);
+          inputElement.classList.remove("error");
+        }
+
+        function handleSuccessfulLogin() {
+          // Show loading state
+          submitButton.disabled = true;
+          submitButton.querySelector(".button-text").textContent =
+            "Logging in...";
+          submitButton.querySelector(".loading-spinner").style.display =
+            "inline";
+
+          // Simulate login process
+          setTimeout(() => {
+            // Show success message
+            successMessage.style.display = "block";
+
+            // Hide form
+            form.style.opacity = "0.5";
+
+            // Simulate redirect (replace with actual redirect logic)
+            setTimeout(() => {
+              // Replace this with your actual redirect logic
+              // window.location.href = "dashboard.html";
+              alert(
+                "Login successful! (This is a demo - implement actual login logic)"
+              );
+
+              // Reset form for demo purposes
+              resetForm();
+            }, 2000);
+          }, 1500);
+        }
+
+        function resetForm() {
+          // Reset form state
+          form.reset();
+          form.style.opacity = "1";
+          successMessage.style.display = "none";
+          submitButton.disabled = false;
+          submitButton.querySelector(".button-text").textContent = "Login";
+          submitButton.querySelector(".loading-spinner").style.display = "none";
+          clearError("username-error");
+          clearError("password-error");
+        }
+
+        // Keyboard accessibility for forgot password link
+        document
+          .querySelector(".forgot-password-link")
+          .addEventListener("keypress", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              // Handle forgot password functionality
+              alert("Forgot password functionality would be implemented here");
+            }
+          });
+      });
+    </script>
+  </body>
 </html>
